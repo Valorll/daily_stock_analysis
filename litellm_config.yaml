@@ -19,21 +19,27 @@ model_list:
   
 
   # --- AIHubmix (OpenAI 兼容，一个 Key 使用多种模型) ---
-  - model_name: coding-glm-5.1-free
+  - model_name: gpt-4o-free
     litellm_params:
-      model: coding-glm-5.1-free
+      model: gpt-4o-free
       api_key: "secrets/AIHUBMIX_KEY"
       api_base: https://aihubmix.com/v1
 
-  - model_name: glm-4.7-flash-free
+  - model_name: coding-minimax-m2.5-free
     litellm_params:
-      model: glm-4.7-flash-free
+      model: coding-minimax-m2.5-free
       api_key: "secrets/AIHUBMIX_KEY"
       api_base: https://aihubmix.com/v1
 
 
   # --- OpenRouter (聚合平台) ---
-   - model_name: NVIDIA
+   - model_name: moonshotai/kimi-k2.5
+     litellm_params:
+       model: moonshotai/kimi-k2.5
+       api_key: "secrets/NVIDIA_API_KEY"
+       api_base: https://integrate.api.nvidia.com/v1
+
+  - model_name: NVIDIA
      litellm_params:
        model: qwen/qwen3.5-122b-a10b
        api_key: "secrets/NVIDIA_API_KEY"
