@@ -19,15 +19,15 @@ model_list:
   
 
   # --- AIHubmix (OpenAI 兼容，一个 Key 使用多种模型) ---
-  - model_name: openai/gpt-4o-mini
+  - model_name: coding-glm-5.1-free
     litellm_params:
-      model: openai/gpt-4o-mini
+      model: coding-glm-5.1-free
       api_key: "secrets/AIHUBMIX_KEY"
       api_base: https://aihubmix.com/v1
 
-  - model_name: openai/claude-3-5-sonnet-20241022
+  - model_name: glm-4.7-flash-free
     litellm_params:
-      model: openai/claude-3-5-sonnet-20241022
+      model: glm-4.7-flash-free
       api_key: "secrets/AIHUBMIX_KEY"
       api_base: https://aihubmix.com/v1
 
@@ -42,9 +42,9 @@ model_list:
 
   # --- siliconflow (OpenAI 兼容，一个 Key 使用多种模型) ---
   # 这是一个关于如何配置在LiteLLM自定义OpenAI兼容API接口的示例
-  - model_name: openai/Qwen/Qwen3.5-397B-A17B
+  - model_name: deepseek-ai/DeepSeek-V3.2
     litellm_params:
-      model: openai/Qwen/Qwen3.5-397B-A17B
+      model: deepseek-ai/DeepSeek-V3.2
       api_key: "secrets/LITELLM_API_KEY" # 从环境变量读取 Key，安全防泄漏
       api_base: https://api.siliconflow.cn/v1
       # 以下配置是表示如何启用Qwen模型的enable_thinking开关
