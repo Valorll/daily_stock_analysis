@@ -16,6 +16,20 @@
 # ===================================
 
 model_list:
+
+
+  # --- OpenRouter (聚合平台) ---
+   - model_name: moonshotai/kimi-k2.5
+     litellm_params:
+       model: moonshotai/kimi-k2.5
+       api_key: "secrets/NVIDIA_API_KEY"
+       api_base: https://integrate.api.nvidia.com/v1
+
+  - model_name: qwen/qwen3.5-122b-a10b
+     litellm_params:
+       model: qwen/qwen3.5-122b-a10b
+       api_key: "secrets/NVIDIA_API_KEY"
+       api_base: https://integrate.api.nvidia.com/v1
   
 
   # --- AIHubmix (OpenAI 兼容，一个 Key 使用多种模型) ---
@@ -32,18 +46,6 @@ model_list:
       api_base: https://aihubmix.com/v1
 
 
-  # --- OpenRouter (聚合平台) ---
-   - model_name: moonshotai/kimi-k2.5
-     litellm_params:
-       model: moonshotai/kimi-k2.5
-       api_key: "secrets/NVIDIA_API_KEY"
-       api_base: https://integrate.api.nvidia.com/v1
-
-  - model_name: NVIDIA
-     litellm_params:
-       model: qwen/qwen3.5-122b-a10b
-       api_key: "secrets/NVIDIA_API_KEY"
-       api_base: https://integrate.api.nvidia.com/v1
   
 
   # --- siliconflow (OpenAI 兼容，一个 Key 使用多种模型) ---
@@ -99,7 +101,7 @@ model_list:
 # ===================================
 router_settings:
   routing_strategy: simple-shuffle    # simple-shuffle / least-busy / latency-based
-  num_retries: 3                      # 单个 deployment 失败后重试次数
-  # timeout: 300                       # 请求超时（秒）
+  num_retries: 5                      # 单个 deployment 失败后重试次数
+  # timeout: 600                       # 请求超时（秒）
   # allowed_fails: 5                  # deployment 被冷却前允许的失败次数
   # cooldown_time: 360                 # deployment 冷却时间（秒）
