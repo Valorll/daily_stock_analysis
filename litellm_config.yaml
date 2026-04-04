@@ -19,6 +19,12 @@ model_list:
 
 
   # --- OpenRouter (聚合平台) ---
+
+  - model_name: zai/glm-4.7-flash
+     litellm_params:
+       model: zai/glm-4.7-flash
+       api_key: "secrets/ZAI_API_KEY"
+       api_base: https://open.bigmodel.cn/api/paas/v4
    
   - model_name: qwen/qwen3.5-122b-a10b
      litellm_params:
