@@ -18,6 +18,13 @@
 model_list:
 
 
+ # --- DeepSeek 官方 API (原生 provider，自动解析 base_url) ---
+  - model_name: deepseek-v4-flash
+    litellm_params:
+      model: deepseek-v4-flash
+      api_key: "os.environ/DEEPSEEK_API_KEY"
+      api_base: https://api.deepseek.com
+  
   # --- OpenRouter (聚合平台) ---
 
   - model_name: zai/glm-4.7-flash
@@ -62,18 +69,6 @@ model_list:
           enable_thinking: true
 
   
-
- # --- DeepSeek 官方 API (原生 provider，自动解析 base_url) ---
-  - model_name: deepseek/deepseek-chat
-    litellm_params:
-      model: deepseek/deepseek-chat
-      api_key: "os.environ/DEEPSEEK_API_KEY"
-
-  - model_name: deepseek/deepseek-reasoner
-    litellm_params:
-      model: deepseek/deepseek-reasoner
-      api_key: "os.environ/DEEPSEEK_API_KEY"
-
   # --- Google Gemini (原生，多 Key 负载均衡) ---
   - model_name: gemini/gemini-2.5-flash
     litellm_params:
